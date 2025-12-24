@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.comunidadfeliz.qa.runner.RunCucumberTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-12-24T13:03:01.948Z" hostname="ASUSROGSTRIXG15" time="51.428">
+  <properties/>
+  <testcase name="TC001_NoVisualizarCampo_FechaFacturacion_SettingDeshabilitado" classname="com.comunidadfeliz.qa.runner.RunCucumberTest" time="27.092"/>
+  <testcase name="TC002_VisualizarCampo_FechaFacturacion_SettingHabilitado" classname="com.comunidadfeliz.qa.runner.RunCucumberTest" time="24.334"/>
+  <system-out><![CDATA[
+@tc001
+Scenario: TC001_NoVisualizarCampo_FechaFacturacion_SettingDeshabilitado                            ?[90m# features/tc001.feature:8?[0m
+[LOGIN] baseUrl=https://app.comunidadfeliz.com
+[LOGIN] user=usuariopruebaqa3@comunidadfeliz.com passLen=11
+  ?[32mGiven ?[0m?[32minicio sesión en Comunidad Feliz?[0m                                                           ?[90m# com.comunidadfeliz.qa.steps.AuthSteps.login()?[0m
+  ?[32mAnd ?[0m?[32mingreso a la comunidad desde la lista ?[0m?[32m?[1m"Comunidad prueba QA Delta"?[0m                            ?[90m# com.comunidadfeliz.qa.steps.ComunidadesSteps.ingresoComunidadDesdeLista(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mvoy a Configurar comunidad -> Configuración -> Egresos e ingresos?[0m                           ?[90m# com.comunidadfeliz.qa.steps.SettingsSteps.voyAConfiguracionEgresos()?[0m
+  ?[32mAnd ?[0m?[32mconfiguro ?[0m?[32m?[1m"Mostrar el campo fecha de facturación en los egresos"?[0m?[32m como ?[0m?[32m?[1m"Desactivado"?[0m?[32m y guardo?[0m ?[90m# com.comunidadfeliz.qa.steps.SettingsSteps.configuroComoYGuardo(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mvoy a Cobranza y recaudación -> Egresos -> Nuevo Egreso?[0m                                      ?[90m# com.comunidadfeliz.qa.steps.EgresosSteps.voyACobranzaEgresosNuevoEgreso()?[0m
+  ?[32mThen ?[0m?[32mno debería visualizar el campo ?[0m?[32m?[1m"Fecha de facturación"?[0m                                       ?[90m# com.comunidadfeliz.qa.steps.EgresosSteps.noDeberiaVerCampo(java.lang.String)?[0m
+
+@tc002
+Scenario: TC002_VisualizarCampo_FechaFacturacion_SettingHabilitado                              ?[90m# features/tc002.feature:8?[0m
+[LOGIN] baseUrl=https://app.comunidadfeliz.com
+[LOGIN] user=usuariopruebaqa3@comunidadfeliz.com passLen=11
+  ?[32mGiven ?[0m?[32minicio sesión en Comunidad Feliz?[0m                                                        ?[90m# com.comunidadfeliz.qa.steps.AuthSteps.login()?[0m
+  ?[32mAnd ?[0m?[32mingreso a la comunidad desde la lista ?[0m?[32m?[1m"Comunidad prueba QA Delta"?[0m                         ?[90m# com.comunidadfeliz.qa.steps.ComunidadesSteps.ingresoComunidadDesdeLista(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mvoy a Configurar comunidad -> Configuración -> Egresos e ingresos?[0m                        ?[90m# com.comunidadfeliz.qa.steps.SettingsSteps.voyAConfiguracionEgresos()?[0m
+  ?[32mAnd ?[0m?[32mconfiguro ?[0m?[32m?[1m"Mostrar el campo fecha de facturación en los egresos"?[0m?[32m como ?[0m?[32m?[1m"Activado"?[0m?[32m y guardo?[0m ?[90m# com.comunidadfeliz.qa.steps.SettingsSteps.configuroComoYGuardo(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mvoy a Cobranza y recaudación -> Egresos -> Nuevo Egreso?[0m                                   ?[90m# com.comunidadfeliz.qa.steps.EgresosSteps.voyACobranzaEgresosNuevoEgreso()?[0m
+  ?[32mThen ?[0m?[32mdebería visualizar el campo ?[0m?[32m?[1m"Fecha de facturación"?[0m                                       ?[90m# com.comunidadfeliz.qa.steps.EgresosSteps.deberiaVerCampo(java.lang.String)?[0m
+]]></system-out>
+  <system-err><![CDATA[dic 24, 2025 10:03:03 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 143
+dic 24, 2025 10:03:03 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 143.0.7499.170. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+dic 24, 2025 10:03:29 A. M. org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 143
+dic 24, 2025 10:03:29 A. M. org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 143.0.7499.170. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.23.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
